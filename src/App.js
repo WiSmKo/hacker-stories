@@ -18,6 +18,38 @@ const list = [
     points: 5,
     objectID: 1,
   },
+  {
+    title: 'MongoDB',
+    url: 'https://www.mongodb.com/',
+    author: 'Not Jordan',
+    num_comments: 3,
+    points: 7,
+    objectID: 2,
+  },
+  {
+    title: 'Spring Boot',
+    url: 'https://spring.io/projects/spring-boot',
+    author: 'Spiderman',
+    num_comments: 2,
+    points: 4,
+    objectID: 3,
+  },
+  {
+    title: 'Nest JS',
+    url: 'https://nestjs.com/',
+    author: 'Tom',
+    num_comments: 3,
+    points: 6,
+    objectID: 4,
+  },
+  {
+    title: 'Cycle JS',
+    url: 'https://cycle.js.org/',
+    author: 'André Staltz',
+    num_comments: 2,
+    points: 5,
+    objectID: 5,
+  },
 ];
 
 
@@ -27,13 +59,19 @@ function App() {
     <div>
       <h1>My Hacker Stories</h1>
 
-      <label htmlFor='search'>Search: </label>
-      <input id='search' type='text' />
+      <Search />
 
       <hr />
 
-      <ul>
-        {list.map(function(item) {
+      <List />
+    </div>
+  );
+}
+
+function List(){
+  return (
+    <ul>
+      {list.map(function(item) {
           return (
             <li key={item.objectID}>
               <span>
@@ -43,12 +81,17 @@ function App() {
               <span> {item.num_comments} </span>
               <span> {item.points} </span>
             </li>
-          )
+          );
         })}
-      </ul>
-
-    </div>
+    </ul>
   );
+}
+
+function Search(){
+  <div>
+    <label htmlFor='search'>Search: </label>
+    <input id='search' type='text' />
+  </div>
 }
 
 export default App;
